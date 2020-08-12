@@ -1,0 +1,51 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "Civilization",
+"language": "GDScript",
+"path": "res://Scripts/Civilization.gd"
+} ]
+_global_script_class_icons={
+"Civilization": ""
+}
+
+[application]
+
+config/name="Universe"
+run/main_scene="res://Universe.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Scripts/Global.gd"
+
+[display]
+
+window/size/width=1500
+window/size/height=900
+window/size/fullscreen=true
+window/dpi/allow_hidpi=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[filesystem]
+
+import/open_asset_import/use_fbx=false
+
+[gui]
+
+theme/use_hidpi=true
+
+[rendering]
+
+threads/thread_model=2
+environment/default_environment="res://default_env.tres"

@@ -1,0 +1,540 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scripts/Universe.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/zh.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/SourceHanSansCN-Regular.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/history.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Canvas.gd" type="Script" id=5]
+[ext_resource path="res://Assets/background.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/TabContainer.gd" type="Script" id=7]
+[ext_resource path="res://Assets/star.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 760, 464 )
+
+[node name="Background" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 7
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Universe" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Space" type="Node" parent="Universe"]
+
+[node name="Canvas" type="CanvasLayer" parent="Universe"]
+script = ExtResource( 5 )
+
+[node name="Title" type="Label" parent="Universe/Canvas"]
+self_modulate = Color( 0.388235, 0.517647, 0.815686, 1 )
+margin_left = 10.0
+margin_right = 230.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 2 )
+text = "宇宙历：1234年"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stars" type="Label" parent="Universe/Canvas/Title"]
+self_modulate = Color( 0.8, 0.8, 0.8, 1 )
+margin_left = 10.0
+margin_top = 48.0
+margin_right = 210.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 2 )
+text = "星系数量：54"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="civis" type="Label" parent="Universe/Canvas/Title"]
+self_modulate = Color( 0.8, 0.8, 0.8, 1 )
+margin_left = 10.0
+margin_top = 96.0
+margin_right = 210.0
+margin_bottom = 140.0
+custom_fonts/font = ExtResource( 2 )
+text = "文明数量：14"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resp" type="Label" parent="Universe/Canvas/Title"]
+self_modulate = Color( 0.164642, 0.648438, 0.648438, 1 )
+margin_top = 160.0
+margin_right = 200.0
+margin_bottom = 204.0
+custom_fonts/font = ExtResource( 2 )
+text = "资源排名"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="lvsp" type="Label" parent="Universe/Canvas/Title"]
+self_modulate = Color( 0.164642, 0.648438, 0.648438, 1 )
+margin_top = 336.0
+margin_right = 200.0
+margin_bottom = 380.0
+custom_fonts/font = ExtResource( 2 )
+text = "人口排名"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tcsp" type="Label" parent="Universe/Canvas/Title"]
+self_modulate = Color( 0.164642, 0.648438, 0.648438, 1 )
+margin_top = 496.0
+margin_right = 200.0
+margin_bottom = 540.0
+custom_fonts/font = ExtResource( 2 )
+text = "科技排名"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sort" type="Control" parent="Universe/Canvas"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="res1" type="Label" parent="Universe/Canvas/Sort"]
+self_modulate = Color( 0.333333, 0.588235, 0.741176, 1 )
+margin_left = 10.0
+margin_top = 200.0
+margin_right = 210.0
+margin_bottom = 237.0
+custom_fonts/font = ExtResource( 2 )
+text = "资源排名："
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="res2" type="Label" parent="Universe/Canvas/Sort"]
+self_modulate = Color( 0.333333, 0.588235, 0.741176, 1 )
+margin_left = 10.0
+margin_top = 240.0
+margin_right = 210.0
+margin_bottom = 277.0
+custom_fonts/font = ExtResource( 2 )
+text = "资源排名："
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="res3" type="Label" parent="Universe/Canvas/Sort"]
+self_modulate = Color( 0.333333, 0.588235, 0.741176, 1 )
+margin_left = 10.0
+margin_top = 280.0
+margin_right = 210.0
+margin_bottom = 317.0
+custom_fonts/font = ExtResource( 2 )
+text = "资源排名："
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lvs1" type="Label" parent="Universe/Canvas/Sort"]
+self_modulate = Color( 0.333333, 0.588235, 0.741176, 1 )
+margin_left = 10.0
+margin_top = 376.0
+margin_right = 210.0
+margin_bottom = 413.0
+custom_fonts/font = ExtResource( 2 )
+text = "人口排名"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lvs2" type="Label" parent="Universe/Canvas/Sort"]
+self_modulate = Color( 0.333333, 0.588235, 0.741176, 1 )
+margin_left = 10.0
+margin_top = 408.0
+margin_right = 210.0
+margin_bottom = 445.0
+custom_fonts/font = ExtResource( 2 )
+text = "人口排名"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lvs3" type="Label" parent="Universe/Canvas/Sort"]
+self_modulate = Color( 0.333333, 0.588235, 0.741176, 1 )
+margin_left = 10.0
+margin_top = 440.0
+margin_right = 210.0
+margin_bottom = 477.0
+custom_fonts/font = ExtResource( 2 )
+text = "人口排名"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tcs1" type="Label" parent="Universe/Canvas/Sort"]
+self_modulate = Color( 0.333333, 0.588235, 0.741176, 1 )
+margin_left = 10.0
+margin_top = 528.0
+margin_right = 210.0
+margin_bottom = 565.0
+custom_fonts/font = ExtResource( 2 )
+text = "科技排名"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tcs2" type="Label" parent="Universe/Canvas/Sort"]
+self_modulate = Color( 0.333333, 0.588235, 0.741176, 1 )
+margin_left = 10.0
+margin_top = 560.0
+margin_right = 210.0
+margin_bottom = 597.0
+custom_fonts/font = ExtResource( 2 )
+text = "科技排名"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tcs3" type="Label" parent="Universe/Canvas/Sort"]
+self_modulate = Color( 0.333333, 0.588235, 0.741176, 1 )
+margin_left = 10.0
+margin_top = 592.0
+margin_right = 210.0
+margin_bottom = 629.0
+custom_fonts/font = ExtResource( 2 )
+text = "科技排名"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingButton" type="Button" parent="Universe/Canvas"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -79.9999
+margin_right = 170.0
+margin_bottom = -19.9999
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.654902, 0.654902, 0.654902, 1 )
+custom_colors/font_color_hover = Color( 0.713726, 0.713726, 0.713726, 1 )
+custom_colors/font_color_pressed = Color( 0.764706, 0.764706, 0.764706, 1 )
+text = "更多设置"
+icon = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="Universe/Canvas"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 250.0
+margin_top = 50.0
+margin_right = -250.0
+margin_bottom = -200.0
+custom_fonts/font = SubResource( 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="设置" type="Panel" parent="Universe/Canvas/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 60.0
+margin_right = -8.0
+margin_bottom = -8.0
+
+[node name="restartButton" type="Button" parent="Universe/Canvas/TabContainer/设置"]
+margin_left = 73.0
+margin_top = 25.0
+margin_right = 197.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 2 )
+text = "随机开始"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Universe/Canvas/TabContainer/设置"]
+self_modulate = Color( 0.647059, 0.647059, 0.647059, 1 )
+margin_left = 238.0
+margin_top = 35.0
+margin_right = 581.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 2 )
+text = "重新开始模拟（ 按照默认参数 ） 星系数量：100"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="Universe/Canvas/TabContainer/设置"]
+margin_left = 71.0
+margin_top = 126.0
+margin_right = 904.0
+margin_bottom = 134.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Universe/Canvas/TabContainer/设置"]
+self_modulate = Color( 0.647059, 0.647059, 0.647059, 1 )
+margin_left = 98.0
+margin_top = 156.0
+margin_right = 182.0
+margin_bottom = 180.0
+custom_fonts/font = SubResource( 2 )
+text = "星系数量："
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarNum" type="Label" parent="Universe/Canvas/TabContainer/设置"]
+self_modulate = Color( 0.647059, 0.647059, 0.647059, 1 )
+margin_left = 198.0
+margin_top = 156.0
+margin_right = 237.0
+margin_bottom = 180.0
+custom_fonts/font = SubResource( 2 )
+text = "40"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HScrollBar" type="HScrollBar" parent="Universe/Canvas/TabContainer/设置"]
+margin_left = 278.0
+margin_top = 155.0
+margin_right = 868.0
+margin_bottom = 179.0
+min_value = 1.0
+max_value = 160.0
+step = 1.0
+page = 10.0
+value = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Universe/Canvas/TabContainer/设置"]
+self_modulate = Color( 0.647059, 0.647059, 0.647059, 1 )
+margin_left = 98.0
+margin_top = 213.0
+margin_right = 178.0
+margin_bottom = 237.0
+custom_fonts/font = SubResource( 2 )
+text = "文明名称："
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="Universe/Canvas/TabContainer/设置"]
+margin_left = 198.0
+margin_top = 202.0
+margin_right = 454.0
+margin_bottom = 246.0
+rect_clip_content = true
+custom_fonts/font = SubResource( 3 )
+max_length = 6
+context_menu_enabled = false
+clear_button_enabled = true
+shortcut_keys_enabled = false
+placeholder_text = "9527"
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Universe/Canvas/TabContainer/设置"]
+self_modulate = Color( 0.647059, 0.647059, 0.647059, 1 )
+margin_left = 490.0
+margin_top = 213.0
+margin_right = 606.0
+margin_bottom = 237.0
+custom_fonts/font = SubResource( 2 )
+text = "（默认：9527）"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Universe/Canvas/TabContainer/设置"]
+self_modulate = Color( 0.647059, 0.647059, 0.647059, 1 )
+margin_left = 98.0
+margin_top = 270.0
+margin_right = 178.0
+margin_bottom = 294.0
+custom_fonts/font = SubResource( 2 )
+text = "文明颜色："
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Universe/Canvas/TabContainer/设置"]
+margin_left = 198.0
+margin_top = 261.0
+margin_right = 238.0
+margin_bottom = 301.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorBar" type="HScrollBar" parent="Universe/Canvas/TabContainer/设置"]
+margin_left = 278.0
+margin_top = 269.0
+margin_right = 863.0
+margin_bottom = 293.0
+max_value = 1530.0
+step = 1.0
+page = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="Universe/Canvas/TabContainer/设置"]
+self_modulate = Color( 0.647059, 0.647059, 0.647059, 1 )
+margin_left = 98.0
+margin_top = 325.0
+margin_right = 178.0
+margin_bottom = 349.0
+custom_fonts/font = SubResource( 2 )
+text = "文明位置："
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Region" type="Panel" parent="Universe/Canvas/TabContainer/设置"]
+self_modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+margin_left = 198.0
+margin_top = 327.0
+margin_right = 418.0
+margin_bottom = 457.0
+rect_min_size = Vector2( 220, 130 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pos" type="TextureRect" parent="Universe/Canvas/TabContainer/设置/Region"]
+self_modulate = Color( 0.698039, 0.698039, 0.698039, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -2.5
+margin_top = -2.5
+margin_right = 2.5
+margin_bottom = 2.5
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="posX" type="HScrollBar" parent="Universe/Canvas/TabContainer/设置"]
+margin_left = 460.0
+margin_top = 340.0
+margin_right = 861.0
+margin_bottom = 364.0
+max_value = 101.0
+step = 1.0
+page = 1.0
+value = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="posY" type="HScrollBar" parent="Universe/Canvas/TabContainer/设置"]
+margin_left = 460.0
+margin_top = 413.0
+margin_right = 861.0
+margin_bottom = 437.0
+max_value = 101.0
+step = 1.0
+page = 1.0
+value = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="customizeButton" type="Button" parent="Universe/Canvas/TabContainer/设置"]
+margin_left = 73.0
+margin_top = 497.0
+margin_right = 247.0
+margin_bottom = 546.0
+custom_fonts/font = ExtResource( 2 )
+text = "自定义数开始"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="历史记录" type="Panel" parent="Universe/Canvas/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 60.0
+margin_right = -8.0
+margin_bottom = -8.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Universe/Canvas/TabContainer/历史记录"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -15.0
+focus_mode = 2
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0.537255, 0.537255, 0.52549, 1 )
+custom_colors/selection_color = Color( 0.14902, 0.309804, 0.470588, 0.862745 )
+custom_constants/line_separation = 4
+text = "未完成"
+selection_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Visible" type="Area2D" parent="Universe"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Universe/Visible"]
+position = Vector2( 752, 448 )
+shape = SubResource( 5 )
+[connection signal="refresh_title" from="Universe" to="Universe/Canvas" method="_on_Universe_refresh_title"]
+[connection signal="button_up" from="Universe/Canvas/SettingButton" to="Universe/Canvas" method="_on_Button_button_up"]
+[connection signal="button_up" from="Universe/Canvas/TabContainer/设置/restartButton" to="Universe/Canvas/TabContainer" method="_on_StartButton_up"]
+[connection signal="value_changed" from="Universe/Canvas/TabContainer/设置/HScrollBar" to="Universe/Canvas/TabContainer" method="_on_HScrollBar_value_changed"]
+[connection signal="value_changed" from="Universe/Canvas/TabContainer/设置/ColorBar" to="Universe/Canvas/TabContainer" method="_on_ColorBar_value_changed"]
+[connection signal="value_changed" from="Universe/Canvas/TabContainer/设置/posX" to="Universe/Canvas/TabContainer" method="_on_posX_value_changed"]
+[connection signal="value_changed" from="Universe/Canvas/TabContainer/设置/posY" to="Universe/Canvas/TabContainer" method="_on_posY_value_changed"]
+[connection signal="button_up" from="Universe/Canvas/TabContainer/设置/customizeButton" to="Universe/Canvas/TabContainer" method="_on_CustomizeButton_up"]
+[connection signal="area_exited" from="Universe/Visible" to="Universe" method="_on_Visible_area_exited"]
